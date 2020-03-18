@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Map Mashup practise</title>
+  <!-- styles -->
+  <link rel="stylesheet" href="http://owsgip.itc.utwente.nl/base/ExtJS/resources/css/ext-all.css" />
+  <link rel="stylesheet" href="http://owsgip.itc.utwente.nl/base/GeoExt/resources/css/geoext-all.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- ExtJS libraries -->
+  <script src="http://owsgip.itc.utwente.nl/base/ExtJS/adapter/ext/ext-base.js"></script>
+  <script src="http://owsgip.itc.utwente.nl/base/ExtJS/ext-all.js"></script>
+
+  <!-- Geo Scripts -->
+  <script src="http://maps.google.com/maps/api/js?v=3.6&sensor=false"></script>
+  <script src="http://owsgip.itc.utwente.nl/base/OpenLayers/OpenLayers.js"></script>
+  <script src="http://owsgip.itc.utwente.nl/base/GeoExt/lib/GeoExt.js"></script>
+
+  <!-- the control script -->
+  <script src="js/control.js"></script>
+</head>
+
+<body>
+  <header id="banner" class="bodygroup">
+    <figure><img src="images/itc-logo.gif" alt="ITC" /></figure>
+    <h1><a href="#">A Simple Web Page <strong>With regions and a mashup map</strong></a></h1>
+    <nav>
+      <ul>
+        <li id="home-li" class="active"><a href="#" onclick="switchDivs('home-'); return false;">home</a></li>
+        <li id="resources-li"><a href="#" onclick="switchDivs('resources-'); return false;">resources</a></li>
+        <li id="contact-li"><a href="#" onclick="switchDivs('contact-'); return false;">contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="home-div" id="home-div">
+    <section id="first" class="bodygroup">
+      <hgroup>
+        <h2>Spatial Data Viewer</h2>
+        <h3>Using Google maps, OpenStreetMap and OGC services</h3>
+      </hgroup>
+      <article>
+        <div id="viewer-panel"></div>
+      </article>
+    </section> <!-- first -->
+
+    <section id="second" class="bodygroup">
+      <hgroup>
+        <h2>Second Section Title</h2>
+        <h3>Subtitle</h3>
+      </hgroup>
+      <article>
+        <!-- content area -->
+      </article>
+    </section>
+
+
+  </div><!-- home -->
+
+  <div id="resources-div" class="hidediv">
+    <section id="third" class="bodygroup">
+      <hgroup>
+        <h2>Third Section Title</h2>
+        <h3>Subtitle</h3>
+      </hgroup>
+      <article>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod tellus eu orci imperdiet
+          nec rutrum lacus blandit. Cras enim nibh, sodales ultricies elementum vel, fermentum id tellus.
+          Proin metus odio, ultricies eu pharetra dictum, laoreet id odio. Curabitur in odio augue. Morbi
+          congue auctor interdum.</p>
+        <p>Suspendisse id purus vel felis auctor mattis non ac erat. Pellentesque sodales venenatis condimentum.
+          Aliquam sit amet nibh nisi, ut pulvinar est. Sed ullamcorper nisi vel tortor volutpat eleifend. Vestibulum
+          iaculis ullamcorper diam consectetur sagittis.</p>
+        <p>Vivamus vitae nulla dolor. Suspendisse eu lacinia justo. Vestibulum a felis ante, non aliquam leo.
+          Aliquam eleifend, est viverra semper luctus, metus purus commodo elit, a elementum nisi lectus vel magna.
+          Praesent faucibus leo sit amet arcu vehicula sed facilisis eros aliquet.</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+          id est laborum.</p>
+      </article>
+    </section>
+  </div> <!-- resources -->
+
+  <div id="contact-div" class="hidediv">
+    <section id="fourth" class="bodygroup">
+      <hgroup>
+        <h2>Fourth Section Title</h2>
+        <h3>Subtitle</h3>
+      </hgroup>
+      <article>
+        <!-- contact content goes here -->
+      </article>
+    </section>
+  </div> <!-- contact -->
+
+
+
+  <footer class="bodygroup">
+    <p>Updated on March 28th, 2013 by Web Admin;<br><a href="http://gip.itc.nl">Faculty of
+        Geo-Information Science and Earth Observation of the University of Twente</a></p>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+/*
+  Name: style.css
+  Date: January 2013
+  Description: Layout and style of a simple webpage.
+  Version: 1.0
+*/
+/* Imports */
+@import url("reset.css");
+
+/* HTML5 tags */
+header, section, footer, nav, article, figure {
+  display: block;
+}
+
+/*---- Global ----*/
+/* Body */
+body {
+  background: #F5F4EF;
+  color: #000305;
+  text-align: left;
+  line-height: 1.429;
+  /* Line Spacing */
+  margin: 0;
+  padding: 0;
+  font-size: 87.5%;
+  /* Base font size: 14px */
+  font-family: 'Trebuchet MS', 'Trebuchet', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
+}
+
+/* Headings */
+h1 {
+  font-size: 48px;
+  line-height: .6;
+}
+
+h2 {
+  font-size: 22px
+}
+
+h3 {
+  font-size: 20px
+}
+
+h4 {
+  font-size: 18px
+}
+
+h2, h3, h4 {
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: .8em;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 1.143em;
+}
+
+/*---- Footer ----*/
+footer {
+  padding: 20px;
+  text-align: right;
+}
+
+/*---- Layout ----*/
+.bodygroup {
+  clear: both;
+  margin: 0 auto;
+  width: 800px;
+}
+
+/*---- banner ----*/
+#banner {
+  margin: 0 auto;
+  padding: 2.5em 0 0 0;
+}
+
+#banner h1 a:link, #banner h1 a:visited {
+  color: #000305;
+  display: block;
+  font-weight: bold;
+  margin: 0 0 .6em .2em;
+  text-decoration: none;
+  width: 450px;
+}
+
+#banner h1 a:hover, #banner h1 a:active {
+  background: none;
+  color: #C74350;
+  text-shadow: none;
+}
+
+#banner h1 strong {
+  font-size: 0.36em;
+  font-weight: normal;
+}
+
+/* nav */
+#banner nav {
+  background: #191970;
+  font-size: 1.143em;
+  height: 40px;
+  line-height: 30px;
+  margin: 0 auto 2em auto;
+  padding: 0;
+  text-align: center;
+  width: 800px;
+}
+
+#banner nav ul {
+  list-style: none;
+  margin: 0 auto;
+  width: 800px;
+}
+
+#banner nav li {
+  float: left;
+  display: inline;
+  margin: 0;
+}
+
+#banner nav a:link, #banner nav a:visited {
+  color: #fff;
+  display: inline-block;
+  height: 30px;
+  padding: 5px 1.5em;
+  text-decoration: none;
+}
+
+#banner nav a:active, #banner nav .active a:link, #banner nav .active a:visited {
+  background: #4682B4;
+  color: #fff;
+  text-shadow: none !important;
+}
+
+#banner nav a:hover {
+  background: #6B9BC3;
+  color: #fff;
+  text-shadow: none !important;
+}
+
+figure {
+  float: right;
+  margin: -.8em 0 2em 2em;
+}
+
+/*---- content -----*/
+/* section */
+#first, #second, #third, #fourth {
+  background: #fff;
+  margin-bottom: 2em;
+  overflow: hidden;
+  padding: 20px 20px;
+  width: 760px;
+}
+
+#first h2, #second h2, #third h2, #fourth h2 {
+  color: #4682B4;
+  font-size: 1.714em;
+  margin-bottom: 0.333em;
+}
+
+#first h3, #second h3, #third h3, #fourth h3 {
+  font-size: 1.429em;
+  margin-bottom: .5em;
+}
+
+#third, #fourth {
+  height: 600px;
+}
+
+/*---- menu activation -----*/
+.hidediv {
+  display: none;
+}
+
+.showdiv {
+  display: block;
+}
+
+/*---- openlayers controls -----*/
+  div.olControlZoom {
+    left: auto !important;
+    right: 10px !important;
+    top: 5px;
+  }
