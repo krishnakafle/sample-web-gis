@@ -44,7 +44,7 @@ Ext.onReady(function() {
   var googleLayer = new OpenLayers.Layer.Google("Google Streets");
   theMap.addLayers([googleLayer, osmLayer]);
   theMap.setBaseLayer(osmLayer);
-  var baseWmsUrl = 'http://owsgip.itc.utwente.nl/cgi-bin/mapserv?MAP=/home/owsfiles/mapfiles/world.map';
+  var baseWmsUrl = 'https://owsgip.itc.utwente.nl/cgi-bin/mapserv?MAP=/home/owsfiles/mapfiles/world.map';
   worldLayer = new OpenLayers.Layer.WMS(
     'World Borders', baseWmsUrl, {
       layers: 'country_border',
@@ -68,7 +68,7 @@ Ext.onReady(function() {
   );
 
   beLayer = new OpenLayers.Layer.WMS(
-    'Province', 'http://db2map.gistemp.com/geoserver/nepal/wms', {
+    'Province', 'https://db2map.gistemp.com/geoserver/nepal/wms', {
       layers: 'nepal:province',
       transparent: true,
       countryname: 'Belgium',
