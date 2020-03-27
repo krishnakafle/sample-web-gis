@@ -44,40 +44,29 @@ Ext.onReady(function() {
   var googleLayer = new OpenLayers.Layer.Google("Google Streets");
   theMap.addLayers([googleLayer, osmLayer]);
   theMap.setBaseLayer(osmLayer);
-  var baseWmsUrl = 'https://owsgip.itc.utwente.nl/cgi-bin/mapserv?MAP=/home/owsfiles/mapfiles/world.map';
-  worldLayer = new OpenLayers.Layer.WMS(
-    'World Borders', baseWmsUrl, {
-      layers: 'country_border',
-      transparent: true,
-      version: '1.3.0'
-    }, {
-      isBaseLayer: false
-    }
-  );
-  theMap.addLayer(worldLayer);
 
-  ctryLayer = new OpenLayers.Layer.WMS(
-    'Netherlands', baseWmsUrl + '&map.layer[country_border].class[0].style[0]=COLOR+0+0+255', {
-      layers: 'country_border',
+  coutryLayer = new OpenLayers.Layer.WMS(
+    'Nepal Boundary', 'https://srl.localmun.com/geoserver/sarawal/wms', {
+      layers: 'sarawal:country',
       transparent: true,
-      countryname: 'Netherlands',
-      version: '1.3.0'
+      countryname: 'Nepal',
+      version: '1.1.1'
     }, {
       isBaseLayer: false
     }
   );
 
   beLayer = new OpenLayers.Layer.WMS(
-    'Province', 'https://db2map.gistemp.com/geoserver/nepal/wms', {
-      layers: 'nepal:province',
+    'Province', 'https://srl.localmun.com/geoserver/sarawal/wms', {
+      layers: 'sarawal:province',
       transparent: true,
-      countryname: 'Belgium',
+      countryname: 'Sarawal',
       version: '1.1.1'
     }, {
       isBaseLayer: false
     }
   );
-  theMap.addLayers([ctryLayer, beLayer]);
+  theMap.addLayers([coutryLayer, beLayer]);
 
   //-- Map display panel
   var mapPanel = new GeoExt.MapPanel({
