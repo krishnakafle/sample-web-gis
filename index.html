@@ -19,18 +19,19 @@
   <script src="js/library/GeoExt.js"></script>
 
   <!-- the control script -->
+  <script src="js/data.js"></script>
   <script src="js/control.js"></script>
 
 </head>
 
 <body>
   <header id="banner" class="bodygroup">
-    <figure><img src="images/itc-logo.gif" alt="ITC" /></figure>
-    <h1><a href="#">A Simple Web Page <strong>With regions and a mashup map</strong></a></h1>
+    <figure><img src="images/nepal-logo.svg" alt="Nepal" style="height:60px;" /></figure>
+    <h1><a href="#">WebAPP <strong>Lab for SDI</strong></a></h1>
     <nav>
       <ul>
         <li id="home-li" class="active"><a href="#" onclick="switchDivs('home-'); return false;">home</a></li>
-        <li id="resources-li"><a href="#" onclick="switchDivs('resources-'); return false;">resources</a></li>
+        <li id="resources-li"><a href="#" onclick="switchDivs('resources-'); return false;">About</a></li>
         <li id="contact-li"><a href="#" onclick="switchDivs('contact-'); return false;">contact</a></li>
       </ul>
     </nav>
@@ -38,8 +39,8 @@
   <div class="home-div" id="home-div">
     <section id="first" class="bodygroup">
       <hgroup>
-        <h2>Spatial Data Viewer</h2>
-        <h3>Using Google maps, OpenStreetMap and OGC services</h3>
+        <h2>Spatial Data Viewer, Nepal</h2>
+        <h3>Using Google maps, OpenStreetMap and OGC services with Geoserver for map tiles layer</h3>
       </hgroup>
       <article>
         <div id="viewer-panel"></div>
@@ -87,11 +88,21 @@
   <div id="contact-div" class="hidediv">
     <section id="fourth" class="bodygroup">
       <hgroup>
-        <h2>Fourth Section Title</h2>
-        <h3>Subtitle</h3>
+        <h2>Contact section</h2>
+        <h3>location map</h3>
       </hgroup>
       <article>
-        <!-- contact content goes here -->
+        <div class="random">
+          <div class="map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.5269273258946!2d85.3308330150145!3d27.670104582807372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19dd45682801%3A0x49563f3b65add867!2sKathmandu%20University%20School%20of%20Management!5e0!3m2!1sen!2snp!4v1585553070642!5m2!1sen!2snp"
+              width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+          </div>
+          <div class="center-location">
+
+          </div>
+
+        </div>
       </article>
     </section>
   </div> <!-- contact -->
@@ -99,8 +110,8 @@
 
 
   <footer class="bodygroup">
-    <p>Updated on March 28th, 2013 by Web Admin;<br><a href="http://gip.itc.nl">Faculty of
-        Geo-Information Science and Earth Observation of the University of Twente</a></p>
+    <p>Compiled on 20th March 2020, by: Krishna Kafle;<br><a href="http://ku.edu.np">Department of Geomatics Engineering,
+    Kathmandu Umversity</a></p>
   </footer>
 
 </body>

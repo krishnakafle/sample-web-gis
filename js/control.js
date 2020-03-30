@@ -45,7 +45,7 @@ Ext.onReady(function() {
   theMap.addLayers([googleLayer, osmLayer]);
   theMap.setBaseLayer(osmLayer);
 
-  coutryLayer = new OpenLayers.Layer.WMS(
+  countryLayer = new OpenLayers.Layer.WMS(
     'Nepal Boundary', 'https://srl.localmun.com/geoserver/sarawal/wms', {
       layers: 'sarawal:country',
       transparent: true,
@@ -56,7 +56,7 @@ Ext.onReady(function() {
     }
   );
 
-  beLayer = new OpenLayers.Layer.WMS(
+  provinceLayer = new OpenLayers.Layer.WMS(
     'Province', 'https://srl.localmun.com/geoserver/sarawal/wms', {
       layers: 'sarawal:province',
       transparent: true,
@@ -66,7 +66,89 @@ Ext.onReady(function() {
       isBaseLayer: false
     }
   );
-  theMap.addLayers([coutryLayer, beLayer]);
+
+  var districtLayer = new OpenLayers.Layer.WMS(
+    'District', 'https://srl.localmun.com/geoserver/sarawal/wms', {
+      layers: 'sarawal:district',
+      transparent: true,
+      countryname: 'Sarawal',
+      version: '1.1.1'
+    }, {
+      isBaseLayer: false
+    }
+  );
+
+  var palikaLayer = new OpenLayers.Layer.WMS(
+    'Rural/Urban Municipality', 'https://srl.localmun.com/geoserver/sarawal/wms', {
+      layers: 'sarawal:gn',
+      transparent: true,
+      countryname: 'Sarawal',
+      version: '1.1.1'
+    }, {
+      isBaseLayer: false
+    }
+  );
+
+  var roadLayer = new OpenLayers.Layer.WMS(
+    'Major Road Network', 'http://110.44.126.80:8888/geoserver/wwf/wms', {
+      layers: 'wwf:Roads',
+      transparent: true,
+      countryname: 'Sarawal',
+      version: '1.1.1'
+    }, {
+      visibility:false,
+      isBaseLayer: false
+    }
+  );
+
+  var riverLayer = new OpenLayers.Layer.WMS(
+    'Water Body', 'http://110.44.126.80:8888/geoserver/wwf/wms', {
+      layers: 'wwf:Water Body',
+      transparent: true,
+      countryname: 'Sarawal',
+      version: '1.1.1'
+    }, {
+      visibility:false,
+      isBaseLayer: false
+
+    }
+  );
+
+  var hydroLayer = new OpenLayers.Layer.WMS(
+    'Major Hydrapower', 'http://110.44.126.80:8888/geoserver/wwf/wms', {
+      layers: 'wwf:Above100MW',
+      transparent: true,
+      countryname: 'Sarawal',
+      version: '1.1.1'
+    }, {
+      visibility:false,
+      isBaseLayer: false
+    }
+  );
+
+
+  theMap.addLayers([countryLayer, provinceLayer, districtLayer, palikaLayer, riverLayer, roadLayer, hydroLayer]);
+
+
+  info = new OpenLayers.Control.WMSGetFeatureInfo({
+            url: 'http://110.44.126.80:8888/geoserver/wms',
+            title: 'Identify features by clicking',
+            queryVisible: true,
+            eventListeners: {
+                getfeatureinfo: function(event) {
+                    map.addPopup(new OpenLayers.Popup.FramedCloud(
+                        "chicken",
+                        map.getLonLatFromPixel(event.xy),
+                        null,
+                        event.text,
+                        null,
+                        true
+                    ));
+                }
+            }
+        });
+        theMap.addControl(info);
+        info.activate();
 
   //-- Map display panel
   var mapPanel = new GeoExt.MapPanel({
